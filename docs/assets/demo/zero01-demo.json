@@ -1,0 +1,278 @@
+{
+  "artifact_kind": "zero01.demo_policy_verification",
+  "checkpoint": "docs/assets/demo/inputs/reference-nudge-candidate.pt",
+  "checkpoint_sha256": "ed110faa0da6363dfbca050c4a1e6cf697d358e6f350579e57fde62e2cea6a1f",
+  "config": "src/so101_wam/assets/configs/mujoco_robot_free.toml",
+  "config_sha256": "68c5fd23779af6280add8f1446b1d7723da7cb011fba3140731cf72bc3c3f68e",
+  "display_duration_s": 33.5,
+  "frame_count": 402,
+  "input_snapshot_provenance": {
+    "checkpoint_source": ".worktrees/ordered-decoder/runs/reference_learning_normalized_recovery_001/candidate.pt",
+    "seed_13_prompt_source": ".worktrees/ordered-decoder/runs/reference_learning_normalized_001/control-2/reference_reference-nudge-block_seed-13_ep-000002_episode",
+    "seed_7_prompt_source": ".worktrees/ordered-decoder/runs/reference_learning_normalized_001/control-0/reference_reference-nudge-block_seed-7_ep-000000_episode",
+    "training_report_source": ".worktrees/ordered-decoder/runs/reference_learning_normalized_recovery_001/training-report.json"
+  },
+  "inputs_dir": "docs/assets/demo/inputs",
+  "limitations": [
+    "not one of the seven requested household tasks",
+    "requested task scenes/prompts are absent",
+    "simulation only; not hardware evidence",
+    "not zero-shot evidence",
+    "current run uses the current fixed source tree; earlier recovery reports are historical",
+    "checkpoint is a limited IFP0/legacy-mean diagnostic, not a full architecture reproduction"
+  ],
+  "media": {
+    "gif": {
+      "path": "docs/assets/demo/zero01-demo.gif",
+      "sha256": "1a73847536ee94e8e858657e956be7b5d2af77d17812b2454d04fbfeff77f7a9"
+    },
+    "mp4": {
+      "path": "docs/assets/demo/zero01-demo.mp4",
+      "sha256": "da17108d0edad63b8c79ec012ad057b3ba1b848cfb03797ddf70ad6e8d564b15"
+    },
+    "preview": {
+      "path": "docs/assets/demo/zero01-preview.png",
+      "sha256": "6cd9743e13fd7b7e68124bf7c1c2ae3a392744aebe88b6ebad13d6bc2ee99f00"
+    }
+  },
+  "recorded_action_replay": [
+    {
+      "action_count": 280,
+      "final_match": true,
+      "final_position_error_m": 0.0,
+      "frame_count": 67,
+      "kind": "reference",
+      "max_trajectory_error_m": 0.0,
+      "seed": 7,
+      "source_manifest_sha256": "43517e94ea28c463fb60636e1c7bd15a8f0094d36749cdf77d542116926ae6a8",
+      "source_npz_sha256": "abb20353c42df17d6216a770979854136994832c1d55ee2ab2767aab46bc78de",
+      "visualization": "recorded accepted action replay with high-resolution cameras"
+    },
+    {
+      "action_count": 280,
+      "final_match": true,
+      "final_position_error_m": 0.0,
+      "frame_count": 67,
+      "kind": "hold",
+      "max_trajectory_error_m": 0.0,
+      "seed": 7,
+      "source_manifest_sha256": "8b5fe4556fb53a7ec7c40225932f8fdb12ae64f6e825010560a0e35d3c2f68c1",
+      "source_npz_sha256": "8b60be4327346a019308b5bcb4f2866fcec7282aac1261969d6205e36f0647d6",
+      "visualization": "recorded accepted action replay with high-resolution cameras"
+    },
+    {
+      "action_count": 280,
+      "final_match": true,
+      "final_position_error_m": 0.0,
+      "frame_count": 67,
+      "kind": "learned",
+      "max_trajectory_error_m": 0.0,
+      "seed": 7,
+      "source_manifest_sha256": "12cc635a29ec041af09bc6fb1b0281a4da8113cc84f6cd4a26ae744b7334638d",
+      "source_npz_sha256": "7a4d14b38e6bbb6146dbb4bffd5e06e8fb292a2391f7f9f24d8425657e1d4c31",
+      "visualization": "recorded accepted action replay with high-resolution cameras"
+    },
+    {
+      "action_count": 280,
+      "final_match": true,
+      "final_position_error_m": 0.0,
+      "frame_count": 67,
+      "kind": "reference",
+      "max_trajectory_error_m": 0.0,
+      "seed": 13,
+      "source_manifest_sha256": "781d62830331f8a2927da7ae360124329cee5cd5e4218a3e0ff8c438db9b1f63",
+      "source_npz_sha256": "d7211976ce857312544a972f92d9f315277902d6524fcae091ea0bffda193f37",
+      "visualization": "recorded accepted action replay with high-resolution cameras"
+    },
+    {
+      "action_count": 280,
+      "final_match": true,
+      "final_position_error_m": 0.0,
+      "frame_count": 67,
+      "kind": "hold",
+      "max_trajectory_error_m": 0.0,
+      "seed": 13,
+      "source_manifest_sha256": "793b9b95c585084e6525bf140c9057c43b04470ce284bcb8413134700f635c34",
+      "source_npz_sha256": "33f55961a9df3c901383ca5c7e01a7cca64f85992c673b52bc7ee488433c2bba",
+      "visualization": "recorded accepted action replay with high-resolution cameras"
+    },
+    {
+      "action_count": 280,
+      "final_match": true,
+      "final_position_error_m": 0.0,
+      "frame_count": 67,
+      "kind": "learned",
+      "max_trajectory_error_m": 0.0,
+      "seed": 13,
+      "source_manifest_sha256": "68a138c55e44ce4c97c46a2667651efc7b95ab857b00445fc8f29fa884fff4eb",
+      "source_npz_sha256": "88d261892c3467f0b09f59ee75a010f3b718d62bc0e1fae04ca1df98e9b58e88",
+      "visualization": "recorded accepted action replay with high-resolution cameras"
+    }
+  ],
+  "replay_command": ".venv/bin/python scripts/verify_demo_policy.py --replay-from runs/zero101_verification_001",
+  "reproduction_command": ".venv/bin/python scripts/verify_demo_policy.py --run-dir runs/zero01_verification_001",
+  "run_dir": "runs/zero101_verification_001",
+  "schema_version": 1,
+  "scope": "known reference-nudge task only",
+  "training_report": "docs/assets/demo/inputs/reference-nudge-training-report.json",
+  "training_report_sha256": "896e130bddd2589ba99d4ce7dd2f7a94c23bda025d41da773a4cf78693314b01",
+  "trials": [
+    {
+      "command_count": 280,
+      "episode": {
+        "frame_count": 280,
+        "manifest_path": "runs/zero101_verification_001/seed-7/reference/reference_reference-nudge-block_seed-7_ep-000070_episode.json",
+        "manifest_sha256": "43517e94ea28c463fb60636e1c7bd15a8f0094d36749cdf77d542116926ae6a8",
+        "npz_path": "runs/zero101_verification_001/seed-7/reference/reference_reference-nudge-block_seed-7_ep-000070_episode.npz",
+        "npz_sha256": "abb20353c42df17d6216a770979854136994832c1d55ee2ab2767aab46bc78de"
+      },
+      "failure_reason": null,
+      "initial_object_position": [
+        0.2162682466,
+        0.1176982024,
+        0.475
+      ],
+      "kind": "reference",
+      "object_position_error_m": 0.001240079551549453,
+      "object_success": true,
+      "seed": 7,
+      "status": "scored",
+      "terminal_object_position": [
+        0.2108438413080749,
+        0.10590228482774096,
+        0.46989224457978374
+      ]
+    },
+    {
+      "command_count": 280,
+      "episode": {
+        "frame_count": 280,
+        "manifest_path": "runs/zero101_verification_001/seed-7/hold/hold_reference-nudge-block_seed-7_ep-000071_episode.json",
+        "manifest_sha256": "8b5fe4556fb53a7ec7c40225932f8fdb12ae64f6e825010560a0e35d3c2f68c1",
+        "npz_path": "runs/zero101_verification_001/seed-7/hold/hold_reference-nudge-block_seed-7_ep-000071_episode.npz",
+        "npz_sha256": "8b60be4327346a019308b5bcb4f2866fcec7282aac1261969d6205e36f0647d6"
+      },
+      "failure_reason": "object_body_position_tolerance",
+      "initial_object_position": [
+        0.2162682466,
+        0.1176982024,
+        0.475
+      ],
+      "kind": "hold",
+      "object_position_error_m": 0.014161457229394523,
+      "object_success": false,
+      "seed": 7,
+      "status": "scored",
+      "terminal_object_position": [
+        0.2162682466,
+        0.1176982024,
+        0.4698922445816064
+      ]
+    },
+    {
+      "command_count": 280,
+      "episode": {
+        "frame_count": 280,
+        "manifest_path": "runs/zero101_verification_001/seed-7/learned/learned_reference-nudge-block_seed-7_ep-000072_episode.json",
+        "manifest_sha256": "12cc635a29ec041af09bc6fb1b0281a4da8113cc84f6cd4a26ae744b7334638d",
+        "npz_path": "runs/zero101_verification_001/seed-7/learned/learned_reference-nudge-block_seed-7_ep-000072_episode.npz",
+        "npz_sha256": "7a4d14b38e6bbb6146dbb4bffd5e06e8fb292a2391f7f9f24d8425657e1d4c31"
+      },
+      "failure_reason": "object_body_position_tolerance",
+      "initial_object_position": [
+        0.2162682466,
+        0.1176982024,
+        0.475
+      ],
+      "kind": "learned",
+      "object_position_error_m": 0.010214769762306118,
+      "object_success": false,
+      "seed": 7,
+      "status": "scored",
+      "terminal_object_position": [
+        0.21904882801367817,
+        0.10026200235909614,
+        0.46989224457978385
+      ]
+    },
+    {
+      "command_count": 280,
+      "episode": {
+        "frame_count": 280,
+        "manifest_path": "runs/zero101_verification_001/seed-13/reference/reference_reference-nudge-block_seed-13_ep-000130_episode.json",
+        "manifest_sha256": "781d62830331f8a2927da7ae360124329cee5cd5e4218a3e0ff8c438db9b1f63",
+        "npz_path": "runs/zero101_verification_001/seed-13/reference/reference_reference-nudge-block_seed-13_ep-000130_episode.npz",
+        "npz_sha256": "d7211976ce857312544a972f92d9f315277902d6524fcae091ea0bffda193f37"
+      },
+      "failure_reason": null,
+      "initial_object_position": [
+        0.2162682466,
+        0.1181982024,
+        0.475
+      ],
+      "kind": "reference",
+      "object_position_error_m": 0.0030207217253105023,
+      "object_success": true,
+      "seed": 13,
+      "status": "scored",
+      "terminal_object_position": [
+        0.21031784379999152,
+        0.10800201995829205,
+        0.4698922445797837
+      ]
+    },
+    {
+      "command_count": 280,
+      "episode": {
+        "frame_count": 280,
+        "manifest_path": "runs/zero101_verification_001/seed-13/hold/hold_reference-nudge-block_seed-13_ep-000131_episode.json",
+        "manifest_sha256": "793b9b95c585084e6525bf140c9057c43b04470ce284bcb8413134700f635c34",
+        "npz_path": "runs/zero101_verification_001/seed-13/hold/hold_reference-nudge-block_seed-13_ep-000131_episode.npz",
+        "npz_sha256": "33f55961a9df3c901383ca5c7e01a7cca64f85992c673b52bc7ee488433c2bba"
+      },
+      "failure_reason": "object_body_position_tolerance",
+      "initial_object_position": [
+        0.2162682466,
+        0.1181982024,
+        0.475
+      ],
+      "kind": "hold",
+      "object_position_error_m": 0.014611470605656722,
+      "object_success": false,
+      "seed": 13,
+      "status": "scored",
+      "terminal_object_position": [
+        0.2162682466,
+        0.1181982024,
+        0.4698922445816064
+      ]
+    },
+    {
+      "command_count": 280,
+      "episode": {
+        "frame_count": 280,
+        "manifest_path": "runs/zero101_verification_001/seed-13/learned/learned_reference-nudge-block_seed-13_ep-000132_episode.json",
+        "manifest_sha256": "68a138c55e44ce4c97c46a2667651efc7b95ab857b00445fc8f29fa884fff4eb",
+        "npz_path": "runs/zero101_verification_001/seed-13/learned/learned_reference-nudge-block_seed-13_ep-000132_episode.npz",
+        "npz_sha256": "88d261892c3467f0b09f59ee75a010f3b718d62bc0e1fae04ca1df98e9b58e88"
+      },
+      "failure_reason": null,
+      "initial_object_position": [
+        0.2162682466,
+        0.1181982024,
+        0.475
+      ],
+      "kind": "learned",
+      "object_position_error_m": 0.0017555667026481988,
+      "object_success": true,
+      "seed": 13,
+      "status": "scored",
+      "terminal_object_position": [
+        0.210725050843705,
+        0.10658706228141054,
+        0.46980622426257734
+      ]
+    }
+  ],
+  "video_fps": 12
+}

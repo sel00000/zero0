@@ -1,0 +1,78 @@
+<mujoco model="dual_so101_wam">
+  <compiler angle="radian" autolimits="true"/>
+  <option timestep="0.005" integrator="implicitfast" cone="elliptic" iterations="10"
+    ls_iterations="20" impratio="10"/>
+
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+    <rgba haze="0.15 0.20 0.25 1"/>
+    <global azimuth="135" elevation="-18"/>
+  </visual>
+
+  <asset>
+    <!-- Apache-2.0 Google DeepMind MuJoCo Menagerie model, pinned in
+         assets/mujoco_menagerie/robotstudio_so101. -->
+    <model name="so101" file="mujoco_menagerie/robotstudio_so101/so101.xml"/>
+    <texture type="skybox" builtin="gradient" rgb1="0.35 0.45 0.60" rgb2="0.05 0.05 0.08"
+      width="512" height="3072"/>
+    <texture type="2d" name="ground_texture" builtin="checker" mark="edge"
+      rgb1="0.24 0.27 0.30" rgb2="0.16 0.18 0.20" markrgb="0.8 0.8 0.8"
+      width="300" height="300"/>
+    <material name="ground_material" texture="ground_texture" texuniform="true"
+      texrepeat="5 5" reflectance="0.1"/>
+    <material name="torso_material" rgba="0.72 0.74 0.78 1" metallic="0.25" roughness="0.45"/>
+    <material name="table_material" rgba="0.35 0.22 0.12 1" roughness="0.8"/>
+    <material name="block_material" rgba="0.1 0.5 0.9 1" roughness="0.5"/>
+    <material name="cylinder_material" rgba="0.9 0.45 0.1 1" roughness="0.65"/>
+  </asset>
+
+  <worldbody>
+    <light pos="0 0 3.5" dir="0 0 -1" directional="true"/>
+    <geom name="floor_protected" type="plane" size="0 0 0.05" material="ground_material"/>
+
+    <!-- Fixed central column. The two arms are separate fixed world bodies so
+         MuJoCo does not suppress arm/torso contacts as parent-child contacts. -->
+    <body name="torso" pos="-0.07 0 0.61">
+      <geom name="torso_protected" type="box" size="0.075 0.075 0.34"
+        material="torso_material"/>
+      <geom name="torso_base_protected" type="box" pos="0 0 -0.52" size="0.16 0.14 0.04"
+        material="torso_material"/>
+      <camera name="head_optional" mode="targetbody" target="workspace_target"
+        pos="0.01 0 0.64" resolution="640 480" fovy="58"/>
+    </body>
+
+    <!-- Rotating the original tabletop SO-101 base +90 degrees about Y makes
+         its neutral kinematic chain hang down like a compact humanoid arm. -->
+    <body name="left_mount" pos="0 0.19 0.96" euler="0 1.57079632679 0">
+      <attach model="so101" prefix="left_"/>
+    </body>
+    <body name="right_mount" pos="0 -0.19 0.96" euler="0 1.57079632679 0">
+      <attach model="so101" prefix="right_"/>
+    </body>
+
+    <body name="table" pos="0.34 0 0.42">
+      <geom name="table_protected" type="box" size="0.43 0.48 0.025"
+        material="table_material"/>
+      <geom name="table_leg_front_protected" type="box" pos="0.28 0 -0.21"
+        size="0.035 0.035 0.21" material="table_material"/>
+      <geom name="table_leg_back_protected" type="box" pos="-0.28 0 -0.21"
+        size="0.035 0.035 0.21" material="table_material"/>
+    </body>
+
+    <body name="workspace_target" pos="0.34 0 0.46"/>
+
+    <!-- Free semantic objects make the default scene useful for contact/render
+         smoke tests. Object contact is not itself forbidden. -->
+    <body name="task_block" pos="0.34 0 0.475">
+      <freejoint name="task_block_free"/>
+      <geom name="task_block" type="box" size="0.025 0.025 0.025" mass="0.08"
+        material="block_material" friction="1 0.005 0.0001"/>
+    </body>
+
+    <body name="task_cylinder" pos="0.36 0.10 0.49">
+      <freejoint name="task_cylinder_free"/>
+      <geom name="task_cylinder" type="cylinder" size="0.018 0.03" mass="0.11"
+        material="cylinder_material" friction="0.75 0.01 0.0002"/>
+    </body>
+  </worldbody>
+</mujoco>

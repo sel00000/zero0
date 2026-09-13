@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "suite_id": "semantic-prompt-control-local-v1",
+  "hypothesis_id": "object-state-direction-v1",
+  "claim_scope": "preregistered_mujoco_object_state_directionality_only",
+  "prompt_control_manifest_sha256": "<sha256>",
+  "semantic_manifest_sha256": "<sha256>",
+  "training_report_sha256": "<sha256>",
+  "checkpoint_sha256": "<sha256>",
+  "mujoco_config_sha256": "<project-config-sha256>",
+  "minimum_trials_per_condition": 3,
+  "primary_endpoint": "success_rate",
+  "secondary_endpoint": "object_position_error_mean_m",
+  "same_task_noninferiority_margin": 0.34,
+  "negative_success_margin": 0.34,
+  "negative_object_position_error_margin_m": 0.05,
+  "negative_conditions": ["wrong_task", "null", "counterfactual"],
+  "descriptive_conditions": ["temporal_shuffle", "image_frame_shuffle"]
+}

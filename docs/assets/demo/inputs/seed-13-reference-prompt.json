@@ -1,0 +1,79 @@
+{
+  "action_keys": [
+    "left_shoulder_pan.pos",
+    "left_shoulder_lift.pos",
+    "left_elbow_flex.pos",
+    "left_wrist_flex.pos",
+    "left_wrist_roll.pos",
+    "left_gripper.pos",
+    "right_shoulder_pan.pos",
+    "right_shoulder_lift.pos",
+    "right_elbow_flex.pos",
+    "right_wrist_flex.pos",
+    "right_wrist_roll.pos",
+    "right_gripper.pos"
+  ],
+  "array_keys": {
+    "action": "action",
+    "joint_state": "joint_state",
+    "timestamps_s": "timestamp",
+    "wrist_rgb": "wrist_rgb"
+  },
+  "camera_keys": [
+    "left_wrist",
+    "right_wrist"
+  ],
+  "duration_s": 5.58,
+  "end_timestamp_s": 5.58,
+  "episode_index": 2,
+  "fingerprint": "6f7c056b446941c6eb8ac7b62cc87505",
+  "fps": 50.0,
+  "fps_tolerance": 0.05,
+  "frame_count": 280,
+  "joint_keys": [
+    "left_shoulder_pan.pos",
+    "left_shoulder_lift.pos",
+    "left_elbow_flex.pos",
+    "left_wrist_flex.pos",
+    "left_wrist_roll.pos",
+    "left_gripper.pos",
+    "right_shoulder_pan.pos",
+    "right_shoulder_lift.pos",
+    "right_elbow_flex.pos",
+    "right_wrist_flex.pos",
+    "right_wrist_roll.pos",
+    "right_gripper.pos"
+  ],
+  "metadata": {
+    "action_timing": "observation_then_command",
+    "initial_previous_action": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "object_success": true,
+    "real_output": false,
+    "reference_success": true,
+    "safety_real_output": false,
+    "source_kind": "mujoco_reference",
+    "success_label_available": true
+  },
+  "npz_sha256": "d7211976ce857312544a972f92d9f315277902d6524fcae091ea0bffda193f37",
+  "resolution": {
+    "height": 24,
+    "width": 32
+  },
+  "schema_version": "so101_wam.episode.v1",
+  "start_timestamp_s": 0.0,
+  "task": "sim-reference-nudge-block",
+  "task_index": 0
+}

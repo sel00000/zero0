@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "suite_id": "prompt-control-local-v1",
+  "hypothesis_id": "joint-proxy-direction-v1",
+  "claim_scope": "preregistered_mujoco_joint_proxy_directionality_only",
+  "prompt_control_manifest_sha256": "<sha256>",
+  "benchmark_manifest_sha256": "<sha256>",
+  "checkpoint_sha256": "<sha256>",
+  "mujoco_config_sha256": "<project-config-sha256>",
+  "minimum_trials_per_condition": 3,
+  "primary_endpoint": "success_rate",
+  "secondary_endpoint": "final_error_mean",
+  "same_task_noninferiority_margin": 0.34,
+  "negative_success_margin": 0.34,
+  "negative_error_margin": 0.05,
+  "negative_conditions": ["wrong_task", "null", "counterfactual"],
+  "descriptive_conditions": ["temporal_shuffle", "image_frame_shuffle"]
+}

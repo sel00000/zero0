@@ -1,0 +1,88 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Python 3.12 quality gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    env:
+      MUJOCO_GL: egl
+      PYTHONUNBUFFERED: "1"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install headless MuJoCo system libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            libegl1 \
+            libgl1 \
+            libgl1-mesa-dri \
+            libglfw3
+
+      - name: Install wheel-backed package and CI tooling
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install '.[sim]' pytest ruff==0.16.7 mypy
+
+      - name: Smoke packaged defaults outside checkout
+        working-directory: /tmp
+        run: |
+          python - <<'PY'
+          from so101_wam.config import (
+              DEFAULT_FAKE_CONFIG_PATH,
+              DEFAULT_MUJOCO_CONFIG_PATH,
+              DEFAULT_ROBOT_FREE_CONFIG_PATH,
+              ProjectConfig,
+          )
+
+          for path in (
+              DEFAULT_FAKE_CONFIG_PATH,
+              DEFAULT_MUJOCO_CONFIG_PATH,
+              DEFAULT_ROBOT_FREE_CONFIG_PATH,
+          ):
+              assert path.is_file(), path
+              ProjectConfig.load(path)
+          PY
+          python -m so101_wam.cli --steps 1
+
+      - name: Check installed dependencies
+        run: python -m pip check
+
+      - name: Lint
+        run: python -m ruff check src tests
+
+      - name: Type check
+        run: python -m mypy src
+
+      - name: Compile Python files
+        run: python -m compileall -q src tests
+
+      - name: Run test suite
+        run: python -m pytest -q
+
+      - name: Run MuJoCo validation smoke
+        run: bash scripts/validate_mujoco.sh

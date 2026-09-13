@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "hypothesis_id": "ifp-k4-local-v1",
+  "claim_scope": "preregistered_local_ifp_diagnostic_only",
+  "seeds": [3, 7, 11],
+  "train_split_sha256": "<sha256>",
+  "validation_split_sha256": "<sha256>",
+  "variant_set": [0, 2, 4],
+  "optimizer_protocol": {
+    "policy_hz": 10.0,
+    "servo_hz": 50.0,
+    "latent_dim": 32,
+    "transformer_layers": 1,
+    "transformer_heads": 4,
+    "future_steps": 3,
+    "action_horizon": 10,
+    "action_history_steps": 4,
+    "ifp_stride": 2,
+    "ifp_architecture": "fused_modules",
+    "ifp_window_steps": 4,
+    "max_context_steps": 300,
+    "stage1_steps": 1000,
+    "stage2_steps": 5000,
+    "sampling_strategy": "task_balanced",
+    "learning_rate": 0.0001,
+    "weight_decay": 0.01,
+    "max_grad_norm": 1.0,
+    "future_latent_weight": 1.0,
+    "action_weight": 1.0,
+    "ifp_weight": 0.25,
+    "device": "cpu",
+    "optimizer": "AdamW"
+  },
+  "closed_loop": {
+    "scope": "synthetic_terminal_joint_proxy",
+    "minimum_trials_per_seed_variant": 1
+  },
+  "endpoints": {
+    "primary": "closed_loop.success_rate",
+    "secondary": "closed_loop.terminal_error_mean"
+  },
+  "margins": {
+    "primary_min_delta_k4_vs_k0": 0.0,
+    "secondary_max_delta_k4_vs_k0": 0.0
+  }
+}

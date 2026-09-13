@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "suite_id": "prompt-control-local-v1",
+  "seed": 7,
+  "config": "effective_config.toml",
+  "checkpoint": "candidate.pt",
+  "live_episode": "episodes/live.npz",
+  "matched_prompt": "episodes/matched.npz",
+  "same_task_alternate_prompt": "episodes/same_task_alternate.npz",
+  "wrong_task_prompt": "episodes/wrong_task.npz"
+}

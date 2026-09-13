@@ -1,0 +1,171 @@
+{
+  "schema_version": "zero01.task_readiness.v1",
+  "recorded_at_utc": "2026-09-13T06:48:48.528091+00:00",
+  "scope": "Inventory audit of the current local prototype; not a task-performance benchmark",
+  "mujoco_version": "3.12.0",
+  "scene": {
+    "path": "src/so101_wam/assets/dual_so101_wam.xml",
+    "sha256": "9eacb0a1c7304321f0f8f40229e7f91790bfaa5009c3d3735c4a4f2cbb17e8d8",
+    "semantic_bodies": [
+      "task_block",
+      "task_cylinder"
+    ],
+    "cameras": [
+      "head_optional",
+      "left_wrist_cam",
+      "right_wrist_cam"
+    ],
+    "deformable_flex_count": 0
+  },
+  "checkpoint": {
+    "path": "docs/assets/demo/inputs/reference-nudge-candidate.pt",
+    "sha256": "ed110faa0da6363dfbca050c4a1e6cf697d358e6f350579e57fde62e2cea6a1f",
+    "architecture": {
+      "latent_dim": 32,
+      "transformer_layers": 1,
+      "transformer_heads": 4,
+      "future_steps": 3,
+      "action_horizon": 10,
+      "action_history_steps": 1,
+      "ifp_steps": 0,
+      "max_context_steps": 300,
+      "action_decoder": "legacy_mean",
+      "action_range_constraint": "normalized_clamp"
+    },
+    "metadata": {
+      "artifact_kind": "compact_wam_seen_task_diagnostic",
+      "evidence_level": "offline_seen_task_diagnostic",
+      "checkpoint_id": "sim-reference-seen-task-normalized_clamp-seed-7",
+      "trained": false,
+      "offline_trained": true,
+      "deployment_ready": false,
+      "zero_shot_claimed": false,
+      "training_evidence_sha256": "9b5f9563085d9e16917632740b25c2520f8f9febaf5cdc7c725657f37eecf991",
+      "training_objective": "seen_task_reconstruction_diagnostic",
+      "training_ifp_steps": 0,
+      "action_history_steps": 1,
+      "optimizer_steps": 1000,
+      "seed": 7,
+      "sampling_strategy": "task_balanced",
+      "sampling_schedule_sha256": "73432e9a8ce7f2d03f27a44eaf06f21249d2c9b2e04cdcbd4aeeee2375026856",
+      "reconstruction_action_mse_normalized": 0.0061508606291479535,
+      "action_decoder": "legacy_mean",
+      "action_range_constraint": "normalized_clamp",
+      "action_output_sha256": "f298b85e9ee96085d7bee0b45bffac07a7f6d9625c714983aff464f7d9189fcc"
+    }
+  },
+  "episode_inventory": {
+    "scope": "Existing local episode manifests; includes repeated reports of the same task and does not imply independent episodes",
+    "manifest_count": 37,
+    "task_label_manifest_counts": {
+      "sim-reference-nudge-block": 18,
+      "supported probe block": 1,
+      "synthetic-place-block-left": 2,
+      "synthetic-place-block-right": 2,
+      "synthetic-place-cylinder-left": 2,
+      "synthetic-place-cylinder-right": 2,
+      "synthetic-train-reach": 6,
+      "synthetic-validation-place": 4
+    },
+    "manifest_list_sha256": "9feafc8d5d468768231cdf0d7bc0c7570d240e71faf72c480ba997d136fe5539"
+  },
+  "requested_task_results": [
+    {
+      "task_id": "pour-water",
+      "task": "물 따르기",
+      "status": "not_run",
+      "success": null,
+      "scored_trials": 0,
+      "reason": "Task-specific environment, correct demonstration and scorer are not implemented in this snapshot",
+      "required_for_valid_trial": [
+        "liquid and containers",
+        "matched sensorimotor prompt",
+        "transfer and spill measurement"
+      ]
+    },
+    {
+      "task_id": "fold-shirt",
+      "task": "상의 접기",
+      "status": "not_run",
+      "success": null,
+      "scored_trials": 0,
+      "reason": "Task-specific environment, correct demonstration and scorer are not implemented in this snapshot",
+      "required_for_valid_trial": [
+        "deformable shirt",
+        "matched sensorimotor prompt",
+        "fold keypoints and cloth-state measurement"
+      ]
+    },
+    {
+      "task_id": "fold-pants",
+      "task": "바지 접기",
+      "status": "not_run",
+      "success": null,
+      "scored_trials": 0,
+      "reason": "Task-specific environment, correct demonstration and scorer are not implemented in this snapshot",
+      "required_for_valid_trial": [
+        "deformable pants",
+        "matched sensorimotor prompt",
+        "leg overlap and fold-state measurement"
+      ]
+    },
+    {
+      "task_id": "organize-objects",
+      "task": "물건 정리",
+      "status": "not_run",
+      "success": null,
+      "scored_trials": 0,
+      "reason": "Task-specific environment, correct demonstration and scorer are not implemented in this snapshot",
+      "required_for_valid_trial": [
+        "object inventory and destination zones",
+        "matched sensorimotor prompt",
+        "per-object placement measurement"
+      ]
+    },
+    {
+      "task_id": "tidy-desk",
+      "task": "책상 정리",
+      "status": "not_run",
+      "success": null,
+      "scored_trials": 0,
+      "reason": "Task-specific environment, correct demonstration and scorer are not implemented in this snapshot",
+      "required_for_valid_trial": [
+        "desk clutter and clear-area specification",
+        "matched sensorimotor prompt",
+        "clear-area and destination measurement"
+      ]
+    },
+    {
+      "task_id": "handshake",
+      "task": "악수",
+      "status": "not_run",
+      "success": null,
+      "scored_trials": 0,
+      "reason": "Task-specific environment, correct demonstration and scorer are not implemented in this snapshot",
+      "required_for_valid_trial": [
+        "hand model and interaction contract",
+        "matched sensorimotor prompt",
+        "contact force and motion measurement"
+      ]
+    },
+    {
+      "task_id": "stack-colored-cups",
+      "task": "색상 컵 3개 쌓기",
+      "status": "not_run",
+      "success": null,
+      "scored_trials": 0,
+      "reason": "Task-specific environment, correct demonstration and scorer are not implemented in this snapshot",
+      "required_for_valid_trial": [
+        "three hollow colored cups",
+        "matched sensorimotor prompt",
+        "color order, support, orientation and stability measurement"
+      ]
+    }
+  ],
+  "related_diagnostic": "docs/assets/demo/zero01-demo.json",
+  "limits": [
+    "No seven-task success rate was measured",
+    "Missing task infrastructure is not a policy failure",
+    "The reference-nudge diagnostic cannot substitute for any of these seven tasks"
+  ]
+}

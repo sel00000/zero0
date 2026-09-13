@@ -1,0 +1,29 @@
+{
+  "artifact_kind": "so101_wam.manual_hardware_signoff",
+  "calibration_id": "REPLACE_WITH_CALIBRATION_ID",
+  "checks": {
+    "arms_down_pose_confirmed": false,
+    "cable_strain_relief_confirmed": false,
+    "collision_clearance_confirmed": false,
+    "joint_direction_labels_confirmed": false,
+    "left_right_wrist_camera_identity": false,
+    "operator_halt_stops_commands": false,
+    "per_tick_delta_limits_confirmed": false,
+    "real_slow_jog_no_contact": false
+  },
+  "config_sha256": "REPLACE_WITH_64_CHARACTER_LOWERCASE_SHA256",
+  "evidence_level": "real",
+  "hardware_id": "REPLACE_WITH_HARDWARE_ID",
+  "operator_id": "REPLACE_WITH_OPERATOR_ID",
+  "result": "pass",
+  "schema_version": "so101_wam.manual_hardware_signoff.v1",
+  "signed_at_utc": "REPLACE_WITH_TIMEZONE_AWARE_ISO8601_TIMESTAMP",
+  "source_evidence_sha256": {
+    "candidate_checkpoint": "REPLACE_WITH_64_CHARACTER_LOWERCASE_SHA256",
+    "mujoco_report": "REPLACE_WITH_64_CHARACTER_LOWERCASE_SHA256",
+    "preflight_report": "REPLACE_WITH_64_CHARACTER_LOWERCASE_SHA256",
+    "prompt_manifest": "REPLACE_WITH_64_CHARACTER_LOWERCASE_SHA256",
+    "prompt_npz": "REPLACE_WITH_64_CHARACTER_LOWERCASE_SHA256",
+    "training_report": "REPLACE_WITH_64_CHARACTER_LOWERCASE_SHA256"
+  }
+}

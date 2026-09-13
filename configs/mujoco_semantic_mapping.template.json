@@ -1,0 +1,37 @@
+{
+  "schema_version": 3,
+  "suite_id": "semantic-suite-local-v1",
+  "scope": "local_dataset_object_mapping_attestation_only",
+  "mappings": [
+    {
+      "case_id": "place-left",
+      "semantic_match": "unverified",
+      "reviewer_id": null,
+      "dataset_task": {
+        "task_index": 201,
+        "task": "place-left"
+      },
+      "object_task_id": "heldout_place_left",
+      "object_task_signature_sha256": "<sha256-of-object-task-geometry>",
+      "semantic_manifest_sha256": "<sha256>",
+      "criterion": "object_body_position",
+      "object_body": "task_block",
+      "mapping_basis": "dataset label mapped to the declared object-state target"
+    },
+    {
+      "case_id": "place-right",
+      "semantic_match": "unverified",
+      "reviewer_id": null,
+      "dataset_task": {
+        "task_index": 202,
+        "task": "place-right"
+      },
+      "object_task_id": "heldout_place_right",
+      "object_task_signature_sha256": "<sha256-of-object-task-geometry>",
+      "semantic_manifest_sha256": "<sha256>",
+      "criterion": "object_body_position",
+      "object_body": "task_cylinder",
+      "mapping_basis": "dataset label mapped to the declared object-state target"
+    }
+  ]
+}

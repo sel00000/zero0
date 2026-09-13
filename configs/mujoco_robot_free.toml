@@ -1,0 +1,48 @@
+[runtime]
+backend = "mujoco"
+camera_hz = 30.0
+policy_hz = 10.0
+servo_hz = 50.0
+context_seconds = 30.0
+prompt_min_seconds = 3.0
+prompt_max_seconds = 12.0
+action_horizon = 10
+primary_cameras = ["left_wrist", "right_wrist"]
+use_head_camera = false
+# This enables only MuJoCo controls. It cannot open a LeRobot motor bus.
+actuation_enabled = true
+
+[safety]
+# Simulation-only canonical ranges. This is not a measured hardware profile.
+calibrated = false
+joint_lower = [
+  -109.9998, -100.0, -96.8298, -94.9998, -157.2108, 0.0,
+  -109.9998, -100.0, -96.8298, -94.9998, -157.2108, 0.0,
+]
+joint_upper = [
+  109.9998, 100.0, 96.8298, 94.9998, 157.2108, 100.0,
+  109.9998, 100.0, 96.8298, 94.9998, 157.2108, 100.0,
+]
+# Observation-only physical gripper bounds, in the unchanged command coordinates.
+# Lower = (-0.174533 - (-0.17453)) * 100 / (1.7453292 - (-0.17453)).
+observation_joint_lower = [
+  -109.9998, -100.0, -96.8298, -94.9998, -157.2108, -0.000156261459173829,
+  -109.9998, -100.0, -96.8298, -94.9998, -157.2108, -0.000156261459173829,
+]
+observation_joint_upper = [
+  109.9998, 100.0, 96.8298, 94.9998, 157.2108, 100.0,
+  109.9998, 100.0, 96.8298, 94.9998, 157.2108, 100.0,
+]
+max_delta_per_servo_tick = [2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 4]
+max_observation_age_s = 0.10
+max_camera_skew_s = 0.017
+watchdog_timeout_s = 0.10
+
+[mujoco]
+# Empty means the bundled dual_so101_wam.xml scene.
+model_path = ""
+camera_width = 32
+camera_height = 24
+gl_backend = "egl"
+home_joint_position = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+forbid_collisions = true

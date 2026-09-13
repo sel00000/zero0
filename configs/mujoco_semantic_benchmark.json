@@ -1,0 +1,56 @@
+{
+  "schema_version": 3,
+  "benchmark_id": "local-object-state-v1",
+  "dataset_task": {
+    "task_index": 201,
+    "task": "synthetic-validation-place"
+  },
+  "train_task_ids": [
+    "train_block_home"
+  ],
+  "heldout_tasks": [
+    {
+      "task_id": "heldout_block_lift",
+      "label": "held-out block lift",
+      "policy_steps": 2,
+      "seeds": [
+        7,
+        13,
+        29
+      ],
+      "object_body": "task_block",
+      "initial_object_positions": [
+        {
+          "seed": 7,
+          "position": [
+            0.32,
+            -0.02,
+            0.475
+          ]
+        },
+        {
+          "seed": 13,
+          "position": [
+            0.34,
+            0.0,
+            0.475
+          ]
+        },
+        {
+          "seed": 29,
+          "position": [
+            0.36,
+            0.02,
+            0.475
+          ]
+        }
+      ],
+      "target_object_position": [
+        0.34,
+        0.0,
+        0.58
+      ],
+      "position_tolerance_m": 0.03
+    }
+  ]
+}
